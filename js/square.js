@@ -85,6 +85,9 @@ Square.prototype.expand = function(){
     if(data.bool.borders){
         obj.style.borderWidth = data.style.border_width_hovered;
     }
+    if(data.style.opacity_hovered != undefined){
+        obj.style.opacity = data.style.opacity_hovered;
+    }
 };
 
 Square.prototype.contract = function(){
@@ -98,6 +101,9 @@ Square.prototype.contract = function(){
     // replace hardcoeded div height (300)
     obj.style.height = 150 + "px";
     obj.style.borderWidth = data.style.border_width_normal;
+    if(data.style.opacity != undefined){
+        obj.style.opacity = data.style.opacity;
+    }
 };
 
 Square.prototype.focus = function(index){

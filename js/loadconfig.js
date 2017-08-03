@@ -25,6 +25,8 @@ var styleItems = {
     border_color: "Border Color",
     border_width_normal: "Border Width",
     border_width_hovered: "Border Width (Hovered)",
+    opacity: "Opacity",
+    opacity_hovered: "Opacity Hovered",
     focus_color: "Focus Color",
     focus_bg_color: "Focus Background Color",
     search_color: "Search Color",
@@ -374,18 +376,19 @@ function loadConfig(d, callback){
     var popup = $("#popup");
     var sqr = $(".sqr");
     span.css("fontFamily", data.style.heading_font);
-    a.css("fontFamily", data.style.link_font);
-    popup.css("fontFamily", data.style.link_font);
     span.css("fontSize", data.style.heading_font_size);
-    a.css("fontSize", data.style.link_font_size);
-    popup.css("fontSize", data.style.link_font_size);
-    $("body").css("backgroundColor", data.style.background);
-    sqr.css("backgroundColor", data.style.foreground);
-    popup.css("backgroundColor", data.style.foreground);
     span.css("color", data.style.heading_color);
     a.css("color", data.style.link_color);
+    a.css("fontFamily", data.style.link_font);
+    a.css("fontSize", data.style.link_font_size);
+    popup.css("fontFamily", data.style.link_font);
+    popup.css("fontSize", data.style.link_font_size);
+    popup.css("backgroundColor", data.style.foreground);
     popup.css("color", data.style.link_color);
+    $("body").css("backgroundColor", data.style.background);
+    sqr.css("backgroundColor", data.style.foreground);
     sqr.css("borderColor", data.style.border_color);
+    sqr.css("opacity", data.style.opacity);
     if(!data.bool.alwaysopen){
         sqr.css("borderWidth", data.style.border_width_normal);
     }
@@ -399,7 +402,6 @@ function loadConfig(d, callback){
     if(data.bool.mascot){
         bgimg.css("backgroundImage", "url('" + data.ext.images[Math.floor(Math.random()*data.ext.images.length)] + "')");
         console.log(data.ext.images);
-        console.log(data.ext.images);
         console.log(data.ext.images[Math.floor(Math.random()*data.ext.images.length)]);
         console.log(Math.floor(Math.random()*data.ext.images.length));
         bgimg.css("bottom", data.ext.bottom);
@@ -407,6 +409,7 @@ function loadConfig(d, callback){
         bgimg.css("height", data.ext.height);
         bgimg.css("width", data.ext.width);
         bgimg.css("opacity", data.ext.opacity);
+        //bgimg.src = data.ext.images[Math.floor(Math.random()*data.ext.images.length)];
     }else{
         bgimg.css("backgroundImage", "");
     }
